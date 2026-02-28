@@ -966,35 +966,69 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Sheet 1'>
+    <worksheet name='Sheet 2'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='Transformed_Housing_Data2' name='federated.0f9emt7093eypv1gvj2nn0rzc0i8' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0f9emt7093eypv1gvj2nn0rzc0i8'>
+            <column datatype='real' name='[Area of the House from Basement (in Sqft)]' role='measure' type='quantitative' />
+            <column caption='Sale Price' datatype='real' name='[Sale_Price]' role='measure' type='quantitative' />
+            <column caption='Transformed_Housing_Data2.csv' datatype='table' name='[__tableau_internal_object_id__].[Transformed_Housing_Data2.csv_1E1AAAA8EB104ED5879E67F9FF1B907A]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Transformed_Housing_Data2.csv_1E1AAAA8EB104ED5879E67F9FF1B907A]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Transformed_Housing_Data2.csv_1E1AAAA8EB104ED5879E67F9FF1B907A:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Area of the House from Basement (in Sqft)]' derivation='Sum' name='[sum:Area of the House from Basement (in Sqft):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sale_Price]' derivation='Sum' name='[sum:Sale_Price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[:Measure Names]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[sum:Area of the House from Basement (in Sqft):qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[__tableau_internal_object_id__].[cnt:Transformed_Housing_Data2.csv_1E1AAAA8EB104ED5879E67F9FF1B907A:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[sum:Sale_Price:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[:Measure Names]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[:Measure Names]' />
+              <text column='[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows />
-        <cols />
+        <cols>[federated.0f9emt7093eypv1gvj2nn0rzc0i8].[:Measure Names]</cols>
       </table>
-      <simple-id uuid='{A8CDDFB9-96DC-40C9-8E17-462E3DD9ABBD}' />
+      <simple-id uuid='{DE73C873-8ED8-48FC-871D-C090F222502D}' />
     </worksheet>
   </worksheets>
   <windows saved-dpi-scale-factor='1.25' source-height='37'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
       <cards>
         <edge name='left'>
           <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
+            <card type='measures' />
           </strip>
         </edge>
         <edge name='top'>
@@ -1009,23 +1043,61 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{53C18BBC-05B6-405A-90A8-EA9722B45F73}' />
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{B41388D9-48D7-4980-9C60-7D35526EA64E}' />
     </window>
   </windows>
   <thumbnails>
-    <thumbnail height='192' name='Sheet 1' width='192'>
+    <thumbnail height='192' name='Sheet 2' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
-      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
-      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
-      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
-      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
-      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
-      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
-      fBUOM1sAAAAASUVORK5CYII=
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
